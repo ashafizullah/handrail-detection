@@ -1,0 +1,200 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environments
+handrail-env/
+handrail-env-mediapipe/
+handrail-env-*/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# poetry
+poetry.lock
+
+# celery beat schedule file
+celerybeat-schedule
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Video Files (Input/Output)
+data/videos/*.mp4
+data/videos/*.avi
+data/videos/*.mov
+data/videos/*.mkv
+data/videos/*.wmv
+data/videos/*.flv
+data/videos/*.webm
+
+# Output Files
+data/output/*.mp4
+data/output/*.avi
+data/output/*.png
+data/output/*.jpg
+data/output/*.jpeg
+data/output/*.csv
+data/output/*.json
+data/output/*.txt
+data/output/*.log
+
+# Model Files
+models/*.pkl
+models/*.joblib
+models/*.h5
+models/*.pb
+models/*.onnx
+models/*.tflite
+models/*.pth
+models/*.pt
+
+# Large Data Files
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# Temporary Files
+tmp/
+temp/
+*.tmp
+*.temp
+
+# Log Files
+*.log
+logs/
+
+# OS Generated Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# MediaPipe Models (automatically downloaded)
+*.tflite
+*.pbtxt
+
+# OpenCV Generated Files
+*.xml
+*.yml
+
+# Analysis Results
+analysis_results/
+reports/
+*.report
+
+# Cache
+.cache/
+*.cache
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Test artifacts
+.tox/
+.nox/
+.pytest_cache/
+pytestdebug.log
+
+# Profiling
+*.prof
+
+# Documentation builds
+docs/_build/
+docs/build/
+site/
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Configuration files with sensitive data
+config.ini
+secrets.json
+.secrets
+credentials.json
+
+# Sample videos (keep structure, ignore content)
+# Uncomment if you want to track sample videos:
+# !data/videos/sample.mp4
+# !data/output/README.md
