@@ -1,0 +1,292 @@
+{
+  "video_info": {
+    "path": "data/videos/office.mp4",
+    "fps": 24,
+    "total_frames": 192,
+    "width": 1280,
+    "height": 720
+  },
+  "handrails": [
+    {
+      "frame": 0,
+      "start_point": [850, 200],
+      "end_point": [850, 450],
+      "length": 250.0,
+      "angle": 90.0
+    },
+    {
+      "frame": 0,
+      "start_point": [950, 180],
+      "end_point": [950, 420],
+      "length": 240.0,
+      "angle": 90.0
+    },
+    {
+      "frame": 10,
+      "start_point": [845, 195],
+      "end_point": [845, 445],
+      "length": 250.0,
+      "angle": 90.0
+    },
+    {
+      "frame": 10,
+      "start_point": [945, 175],
+      "end_point": [945, 415],
+      "length": 240.0,
+      "angle": 90.0
+    },
+    {
+      "frame": 20,
+      "start_point": [840, 190],
+      "end_point": [840, 440],
+      "length": 250.0,
+      "angle": 90.0
+    },
+    {
+      "frame": 20,
+      "start_point": [940, 170],
+      "end_point": [940, 410],
+      "length": 240.0,
+      "angle": 90.0
+    },
+    {
+      "frame": 30,
+      "start_point": [835, 185],
+      "end_point": [835, 435],
+      "length": 250.0,
+      "angle": 90.0
+    },
+    {
+      "frame": 30,
+      "start_point": [935, 165],
+      "end_point": [935, 405],
+      "length": 240.0,
+      "angle": 90.0
+    },
+    {
+      "frame": 40,
+      "start_point": [830, 180],
+      "end_point": [830, 430],
+      "length": 250.0,
+      "angle": 90.0
+    },
+    {
+      "frame": 40,
+      "start_point": [930, 160],
+      "end_point": [930, 400],
+      "length": 240.0,
+      "angle": 90.0
+    },
+    {
+      "frame": 50,
+      "start_point": [825, 175],
+      "end_point": [825, 425],
+      "length": 250.0,
+      "angle": 90.0
+    },
+    {
+      "frame": 50,
+      "start_point": [925, 155],
+      "end_point": [925, 395],
+      "length": 240.0,
+      "angle": 90.0
+    },
+    {
+      "frame": 60,
+      "start_point": [820, 170],
+      "end_point": [820, 420],
+      "length": 250.0,
+      "angle": 90.0
+    },
+    {
+      "frame": 60,
+      "start_point": [920, 150],
+      "end_point": [920, 390],
+      "length": 240.0,
+      "angle": 90.0
+    },
+    {
+      "frame": 70,
+      "start_point": [815, 165],
+      "end_point": [815, 415],
+      "length": 250.0,
+      "angle": 90.0
+    },
+    {
+      "frame": 70,
+      "start_point": [915, 145],
+      "end_point": [915, 385],
+      "length": 240.0,
+      "angle": 90.0
+    },
+    {
+      "frame": 80,
+      "start_point": [810, 160],
+      "end_point": [810, 410],
+      "length": 250.0,
+      "angle": 90.0
+    },
+    {
+      "frame": 80,
+      "start_point": [910, 140],
+      "end_point": [910, 380],
+      "length": 240.0,
+      "angle": 90.0
+    },
+    {
+      "frame": 90,
+      "start_point": [805, 155],
+      "end_point": [805, 405],
+      "length": 250.0,
+      "angle": 90.0
+    },
+    {
+      "frame": 90,
+      "start_point": [905, 135],
+      "end_point": [905, 375],
+      "length": 240.0,
+      "angle": 90.0
+    },
+    {
+      "frame": 100,
+      "start_point": [800, 150],
+      "end_point": [800, 400],
+      "length": 250.0,
+      "angle": 90.0
+    },
+    {
+      "frame": 100,
+      "start_point": [900, 130],
+      "end_point": [900, 370],
+      "length": 240.0,
+      "angle": 90.0
+    },
+    {
+      "frame": 110,
+      "start_point": [795, 145],
+      "end_point": [795, 395],
+      "length": 250.0,
+      "angle": 90.0
+    },
+    {
+      "frame": 110,
+      "start_point": [895, 125],
+      "end_point": [895, 365],
+      "length": 240.0,
+      "angle": 90.0
+    },
+    {
+      "frame": 120,
+      "start_point": [790, 140],
+      "end_point": [790, 390],
+      "length": 250.0,
+      "angle": 90.0
+    },
+    {
+      "frame": 120,
+      "start_point": [890, 120],
+      "end_point": [890, 360],
+      "length": 240.0,
+      "angle": 90.0
+    },
+    {
+      "frame": 130,
+      "start_point": [785, 135],
+      "end_point": [785, 385],
+      "length": 250.0,
+      "angle": 90.0
+    },
+    {
+      "frame": 130,
+      "start_point": [885, 115],
+      "end_point": [885, 355],
+      "length": 240.0,
+      "angle": 90.0
+    },
+    {
+      "frame": 140,
+      "start_point": [780, 130],
+      "end_point": [780, 380],
+      "length": 250.0,
+      "angle": 90.0
+    },
+    {
+      "frame": 140,
+      "start_point": [880, 110],
+      "end_point": [880, 350],
+      "length": 240.0,
+      "angle": 90.0
+    },
+    {
+      "frame": 150,
+      "start_point": [775, 125],
+      "end_point": [775, 375],
+      "length": 250.0,
+      "angle": 90.0
+    },
+    {
+      "frame": 150,
+      "start_point": [875, 105],
+      "end_point": [875, 345],
+      "length": 240.0,
+      "angle": 90.0
+    },
+    {
+      "frame": 160,
+      "start_point": [770, 120],
+      "end_point": [770, 370],
+      "length": 250.0,
+      "angle": 90.0
+    },
+    {
+      "frame": 160,
+      "start_point": [870, 100],
+      "end_point": [870, 340],
+      "length": 240.0,
+      "angle": 90.0
+    },
+    {
+      "frame": 170,
+      "start_point": [765, 115],
+      "end_point": [765, 365],
+      "length": 250.0,
+      "angle": 90.0
+    },
+    {
+      "frame": 170,
+      "start_point": [865, 95],
+      "end_point": [865, 335],
+      "length": 240.0,
+      "angle": 90.0
+    },
+    {
+      "frame": 180,
+      "start_point": [760, 110],
+      "end_point": [760, 360],
+      "length": 250.0,
+      "angle": 90.0
+    },
+    {
+      "frame": 180,
+      "start_point": [860, 90],
+      "end_point": [860, 330],
+      "length": 240.0,
+      "angle": 90.0
+    },
+    {
+      "frame": 191,
+      "start_point": [755, 105],
+      "end_point": [755, 355],
+      "length": 250.0,
+      "angle": 90.0
+    },
+    {
+      "frame": 191,
+      "start_point": [855, 85],
+      "end_point": [855, 325],
+      "length": 240.0,
+      "angle": 90.0
+    }
+  ],
+  "current_frame": 0
+}

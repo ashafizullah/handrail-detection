@@ -15,19 +15,38 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from detection.pose_detector_mediapipe import PoseDetectorMediaPipe
 from detection.handrail_detector import HandrailDetector
+from detection.annotation_based_detector import AnnotationBasedHandrailDetector
 from detection.proximity_analyzer import ProximityAnalyzer
 from detection.people_tracker import PeopleTracker
 from utils.video_processor import VideoProcessor
 from utils.visualization import Visualizer
 
 class HandrailDetectionSystem:
-    def __init__(self, touch_threshold: int = 30):
+    def __init__(self, touch_threshold: int = 30, annotation_file: str = None):
         self.pose_detector = PoseDetectorMediaPipe()
         self.handrail_detector = HandrailDetector()
+        self.annotation_detector = None
         self.proximity_analyzer = ProximityAnalyzer(touch_threshold)
         self.people_tracker = PeopleTracker()
         self.visualizer = Visualizer()
         self.analysis_history: List[Dict[str, Any]] = []
+        self.use_annotations = False
+        
+        # Initialize annotation-based detector if file provided
+        if annotation_file and os.path.exists(annotation_file):
+            try:
+                self.annotation_detector = AnnotationBasedHandrailDetector(annotation_file)
+                self.use_annotations = True
+                print(f"Using manual annotations from: {annotation_file}")
+                
+                # Print annotation stats
+                stats = self.annotation_detector.get_annotation_stats()
+                print(f"Annotation stats: {stats['total_handrails']} handrails in {stats['annotated_frames']} frames")
+                print(f"Frame coverage: {stats['frame_coverage']:.1f}%")
+                
+            except Exception as e:
+                print(f"Error loading annotations: {e}")
+                print("Falling back to automatic detection")
     
     def process_frame(self, frame: np.ndarray, frame_number: int) -> np.ndarray:
         """Process a single frame and return annotated result"""
@@ -43,11 +62,17 @@ class HandrailDetectionSystem:
             'people_details': []
         }
         
-        # Detect handrails once for the frame
-        handrail_lines_edges = self.handrail_detector.detect_handrail_edges(frame)
-        handrail_lines_vertical = self.handrail_detector.detect_vertical_handrails(frame)
-        handrail_lines = handrail_lines_edges + handrail_lines_vertical
-        handrail_lines = self.filter_duplicate_handrails(handrail_lines)
+        # Detect handrails - use annotations if available, otherwise automatic detection
+        if self.use_annotations and self.annotation_detector:
+            handrail_lines = self.annotation_detector.detect_handrail_edges(frame, frame_number)
+            frame_analysis['detection_method'] = 'manual_annotation'
+        else:
+            handrail_lines_edges = self.handrail_detector.detect_handrail_edges(frame)
+            handrail_lines_vertical = self.handrail_detector.detect_vertical_handrails(frame)
+            handrail_lines = handrail_lines_edges + handrail_lines_vertical
+            handrail_lines = self.filter_duplicate_handrails(handrail_lines)
+            frame_analysis['detection_method'] = 'automatic'
+        
         frame_analysis['handrail_count'] = len(handrail_lines)
         
         # Process each detected person
@@ -108,8 +133,11 @@ class HandrailDetectionSystem:
         # Draw pose with MediaPipe (multiple people)
         result_frame = self.pose_detector.draw_pose(result_frame, people_data)
         
-        # Draw handrails
-        result_frame = self.handrail_detector.draw_handrails(result_frame, handrail_lines)
+        # Draw handrails (use appropriate drawer based on detection method)
+        if self.use_annotations and self.annotation_detector:
+            result_frame = self.annotation_detector.draw_handrails(result_frame, handrail_lines)
+        else:
+            result_frame = self.handrail_detector.draw_handrails(result_frame, handrail_lines)
         
         # Draw detection zones
         result_frame = self.visualizer.draw_detection_zones(result_frame, handrail_lines, 
@@ -215,6 +243,7 @@ def main():
     parser.add_argument('--output', '-o', help='Path to output video file')
     parser.add_argument('--threshold', '-t', type=int, default=30, 
                        help='Touch detection threshold in pixels (default: 30)')
+    parser.add_argument('--annotations', '-a', help='Path to manual annotations JSON file')
     parser.add_argument('--no-display', action='store_true', 
                        help='Disable live video display')
     
@@ -226,7 +255,10 @@ def main():
         return 1
     
     # Initialize detection system
-    detector_system = HandrailDetectionSystem(touch_threshold=args.threshold)
+    detector_system = HandrailDetectionSystem(
+        touch_threshold=args.threshold,
+        annotation_file=args.annotations
+    )
     
     # Process video
     try:
@@ -249,6 +281,11 @@ def main():
         print("\n" + "="*60)
         print("HANDRAIL DETECTION ANALYSIS REPORT")
         print("="*60)
+        
+        # Show detection method
+        detection_method = detector_system.analysis_history[0].get('detection_method', 'unknown') if detector_system.analysis_history else 'unknown'
+        print(f"Detection method: {detection_method.replace('_', ' ').title()}")
+        
         print(f"Total frames analyzed: {report['total_frames']}")
         print(f"Frames using handrail: {report['frames_using_handrail']}")
         print(f"Frames not using handrail: {report['frames_not_using_handrail']}")

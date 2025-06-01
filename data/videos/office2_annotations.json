@@ -1,0 +1,116 @@
+{
+  "video_info": {
+    "path": "data/videos/office2.mp4",
+    "fps": 24,
+    "total_frames": 192,
+    "width": 1280,
+    "height": 720
+  },
+  "handrails": [
+    {
+      "frame": 0,
+      "start_point": [
+        524,
+        24
+      ],
+      "end_point": [
+        190,
+        497
+      ],
+      "length": 579.0379952990995,
+      "angle": 125.22710343030356
+    },
+    {
+      "frame": 0,
+      "start_point": [
+        637,
+        35
+      ],
+      "end_point": [
+        611,
+        484
+      ],
+      "length": 449.7521539692723,
+      "angle": 93.31409477429052
+    },
+    {
+      "frame": 0,
+      "start_point": [
+        648,
+        45
+      ],
+      "end_point": [
+        646,
+        488
+      ],
+      "length": 443.00451464968165,
+      "angle": 90.25866993338677
+    },
+    {
+      "frame": 0,
+      "start_point": [
+        612,
+        498
+      ],
+      "end_point": [
+        644,
+        496
+      ],
+      "length": 32.0624390837628,
+      "angle": -3.5763343749973515
+    },
+    {
+      "frame": 0,
+      "start_point": [
+        759,
+        40
+      ],
+      "end_point": [
+        1095,
+        695
+      ],
+      "length": 736.1528373918014,
+      "angle": 62.843215152770746
+    },
+    {
+      "frame": 0,
+      "start_point": [
+        773,
+        23
+      ],
+      "end_point": [
+        1093,
+        522
+      ],
+      "length": 592.7908568795575,
+      "angle": 57.32865506921512
+    },
+    {
+      "frame": 0,
+      "start_point": [
+        1102,
+        526
+      ],
+      "end_point": [
+        1270,
+        525
+      ],
+      "length": 168.00297616411441,
+      "angle": -0.3410422788588532
+    },
+    {
+      "frame": 0,
+      "start_point": [
+        1120,
+        537
+      ],
+      "end_point": [
+        1115,
+        587
+      ],
+      "length": 50.24937810560445,
+      "angle": 95.71059313749964
+    }
+  ],
+  "current_frame": 0
+}
