@@ -13,21 +13,21 @@ import numpy as np
 # Add src to path
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-from detection.pose_detector_mediapipe import PoseDetectorMediaPipe
+from detection.stable_pose_detector import StablePoseDetector
 from detection.handrail_detector import HandrailDetector
 from detection.annotation_based_detector import AnnotationBasedHandrailDetector
 from detection.proximity_analyzer import ProximityAnalyzer
-from detection.people_tracker import PeopleTracker
+from detection.stable_people_tracker import StablePeopleTracker
 from utils.video_processor import VideoProcessor
 from utils.visualization import Visualizer
 
 class HandrailDetectionSystem:
     def __init__(self, touch_threshold: int = 30, annotation_file: str = None):
-        self.pose_detector = PoseDetectorMediaPipe()
+        self.pose_detector = StablePoseDetector()
         self.handrail_detector = HandrailDetector()
         self.annotation_detector = None
         self.proximity_analyzer = ProximityAnalyzer(touch_threshold)
-        self.people_tracker = PeopleTracker()
+        self.people_tracker = StablePeopleTracker()
         self.visualizer = Visualizer()
         self.analysis_history: List[Dict[str, Any]] = []
         self.use_annotations = False
@@ -259,6 +259,13 @@ def main():
         touch_threshold=args.threshold,
         annotation_file=args.annotations
     )
+    
+    # Set default output path if not specified
+    if not args.output:
+        # Extract filename without extension and set output in data/output/
+        input_basename = os.path.splitext(os.path.basename(args.input_video))[0]
+        os.makedirs('data/output', exist_ok=True)
+        args.output = f'data/output/{input_basename}_output.mp4'
     
     # Process video
     try:

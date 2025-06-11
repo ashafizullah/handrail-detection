@@ -97,9 +97,6 @@ class ProximityAnalyzer:
             cv2.putText(frame, f"R: {analysis_result['right_hand_distance']:.1f}px", 
                        (right_hand[0] + 15, right_hand[1]), cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
         
-        # Draw overall status
-        status = "HOLDING HANDRAIL" if analysis_result['any_hand_touching'] else "NOT HOLDING HANDRAIL"
-        color = (0, 255, 0) if analysis_result['any_hand_touching'] else (0, 0, 255)
-        cv2.putText(frame, status, (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, color, 2)
+        # Overall status removed per user request
         
         return frame

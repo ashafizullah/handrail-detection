@@ -31,9 +31,6 @@ class Visualizer:
             f"People Count: {analysis_data.get('total_people', 0)}",
             f"Using Handrail: {analysis_data.get('using_handrail', 0)}",
             f"NOT Using Handrail: {analysis_data.get('not_using_handrail', 0)}",
-            f"Pose Confidence: {analysis_data.get('pose_confidence', 0):.2f}",
-            f"Safety Status: {'SAFE' if analysis_data.get('any_hand_touching', False) else 'UNSAFE'}",
-            f"On Stairs: {'YES' if analysis_data.get('on_stairs', False) else 'NO'}",
             f"Handrails Detected: {analysis_data.get('handrail_count', 0)}"
         ]
         
